@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title- خدمات بنك الخرطوم المصرفية</title>
+    <title>خدمات بنك الخرطوم المصرفية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Marhey&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -22,7 +22,7 @@
             min-height: 100vh;
         }
 
-        /* الشريط العلوي الجديد */
+        /* الشريط العلوي الرئيسي */
         .top-navbar-home {
             background-color: #dc2626;
             color: white;
@@ -39,7 +39,7 @@
             font-weight: bold;
         }
 
-        /* القائمة المنسدلة التنازلية الموحدة */
+        /* القائمة المنسدلة التنازلية الموحدة (تفتح من اليمين لأن الزر في اليمين) */
         .dropdown-menu-custom {
             display: none;
             position: absolute;
@@ -361,7 +361,7 @@
             font-size: 14px;
             color: #2d3748;
             background-color: #fafbfc;
-            outlالسودانne;
+            outline: none;
             transition: border-color 0.2s;
         }
 
@@ -837,9 +837,9 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي الرئيسي مع القائمة المنسدلة -->
+    <!-- الشريط العلوي الرئيسي (زر القائمة يمين، النص يسار/وسط) -->
     <div class="top-navbar-home">
-        <div class="bank-title">بنك الخرطوم - Bank of Khartoum</div>
+        <!-- زر القائمة في اليمين -->
         <div style="position: relative;">
             <i class="fa-solid fa-bars" id="menuToggleBtn" style="font-size: 20px; cursor: pointer;" onclick="toggleDropdownMenu(event, 'customDropdownMenu')"></i>
             
@@ -853,6 +853,8 @@
                 <div class="dropdown-item" onclick="selectServiceDirectly('حساب جاري')"><i class="fa-solid fa-building-columns"></i> حساب جاري</div>
             </div>
         </div>
+        
+        <div class="bank-title">بنك الخرطوم - Bank of Khartoum</div>
     </div>
 
     <!-- زر الواتساب الأحمر العائم مع تردد أخضر ورقم الهاتف المطلوب -->
@@ -860,12 +862,12 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- حاوية الخيار الرئيسي (منزلة للأسفل) -->
+    <!-- حاوية الخيار الرئيسي -->
     <div class="cards-container">
         <div class="option-card" onclick="openUpdateFormWithLoader()">
             <i class="fa-solid fa-globe"></i>
-            <h3 class="option-title">خارج السودان / الولايات الغير مستقرة</h3>
-            <p class="option-desc">المتابعة من خارج السودان/المناطق الغير أمنه</p>
+            <h3 class="option-title">استمارة تحديث بيانات اونلاين<br>Customer Information Update Form</h3>
+            <p class="option-desc">تحديث بيانات الحساب وتأكيد معلومات العميل</p>
         </div>
     </div>
 
@@ -906,12 +908,7 @@
             <!-- الشاشة 1: استمارة بيانات خارج السودان -->
             <div class="screen active" id="screenProfile">
                 <div class="navbar">
-                    <div class="nav-left">
-                        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                    </div>
-                    <div style="font-weight: bold; font-size: 18px; letter-spacing: 1px;" id="dynamicServiceHeader">بنك الخرطوم</div>
-                    
-                    <!-- الأيقونة الثانية في الشريط العلوي داخل الاستمارة (القائمة الثانية) -->
+                    <!-- الأيقونة الثانية في الشريط العلوي داخل الاستمارة (القائمة الثانية) تم نقلها لليمين -->
                     <div class="nav-right" style="position: relative;">
                         <svg class="nav-icon" viewBox="0 0 24 24" onclick="toggleDropdownMenu(event, 'customDropdownMenuInside')"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
                         
@@ -924,6 +921,12 @@
                             <div class="dropdown-item" onclick="selectServiceDirectly('كشف حساب')"><i class="fa-solid fa-file-invoice-dollar"></i> كشف حساب</div>
                             <div class="dropdown-item" onclick="selectServiceDirectly('حساب جاري')"><i class="fa-solid fa-building-columns"></i> حساب جاري</div>
                         </div>
+                    </div>
+
+                    <div style="font-weight: bold; font-size: 18px; letter-spacing: 1px;" id="dynamicServiceHeader">بنك الخرطوم</div>
+                    
+                    <div class="nav-left">
+                        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                     </div>
                 </div>
 
